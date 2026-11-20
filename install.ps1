@@ -5,6 +5,9 @@ param([switch]$StartAtSignIn, [switch]$NoDesktopShortcut)
 $app = Join-Path $PSScriptRoot 'Heatwatch.ps1'
 if (-not (Test-Path $app)) { Write-Error "Heatwatch.ps1 not found next to install.ps1"; exit 1 }
 
+# files extracted from a downloaded zip carry the "from the internet" mark; clear it for our own scripts
+Get-ChildItem $PSScriptRoot -Include *.ps1, *.cmd -Recurse | Unblock-File -ErrorAction SilentlyContinue
+
 $ps = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
 $psArgs = "-NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$app`""
 $shell = New-Object -ComObject WScript.Shell

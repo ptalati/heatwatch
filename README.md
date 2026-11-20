@@ -25,7 +25,17 @@ At 85 °C or above, the thermal card turns red and pulses, and the tray icon tur
 
 No install of anything else, no admin rights, and no background service. It's a single PowerShell script using WPF.
 
-## Install
+## Download
+
+**[Download Heatwatch.zip](https://github.com/ptalati/heatwatch/releases/latest/download/Heatwatch.zip)** (Windows 10/11)
+
+1. Extract the zip to a folder you'll keep, for example `Documents\Heatwatch`.
+2. Double-click **`install.cmd`**. If Windows shows "Windows protected your PC", choose **More info → Run anyway**. The script isn't code-signed, but you can read every line of it first.
+3. Look for the thermometer in the system tray.
+
+The installer adds Start menu and desktop shortcuts, turns on start at sign-in, and launches Heatwatch. Moving the folder later breaks the shortcuts, so run `install.cmd` again from the new location if you do.
+
+## Install from source
 
 ```powershell
 git clone https://github.com/ptalati/heatwatch.git
