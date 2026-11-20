@@ -1,0 +1,5 @@
+# runtime data lives in %APPDATA%\Heatwatch, but ignore stray copies just in case
+settings.json
+readings.csv
+*.log
+Thumbs.db
