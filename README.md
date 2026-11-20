@@ -2,20 +2,22 @@
 
 Small always-on-top desktop widgets for Windows that keep an eye on a laptop that runs hot. One tray app, four widgets, and a layout that survives restarts.
 
-![Thermal widget](docs/thermal.png)
+![GPU temperature widget](docs/thermal.png)
 
 Built after a laptop kept powering off with no blue screen and no error code. The cause was overheating whenever Docker started a batch of containers. Heatwatch shows the warning signs before that happens, and records what the machine was doing just before a crash.
 
 ## Widgets
 
+Every reading has an icon, a plain-English label and a short hint (for example "light load", "of 32 GB used", "turbo off · cooler"), so you can understand it at a glance.
+
 | Widget | Shows |
 |---|---|
-| **Thermal** | GPU temperature with a COOL / WARM / HOT badge, a 2-minute graph and a 40–95 °C bar; CPU load, CPU clock (flags Turbo Boost), Docker VM memory, RAM, battery, free space on C:, and the busiest process |
-| **Network** | Download and upload speed with a 2-minute graph, Wi-Fi band, adapter, data used today, latency to your router |
-| **Containers** | Running Docker containers with CPU and memory, a stop button for each, **Stop all** and **Quit Docker** (both ask first). Shows a **Start Docker** button when Docker is off |
-| **System health** | Uptime, last start time, and unexpected shutdowns from the last 30 days. Each one shows the last readings Heatwatch saved before it |
+| **GPU temperature** | The temperature with a COOL / WARM / HOT badge, a status line in plain words ("Running cool · nothing to do", "Getting warm · close heavy apps", "Too hot · shutdown risk"), a 2-minute graph and a bar marked at warm 75° and hot 85°. Plus processor load, speed (flags Turbo Boost), Docker memory, memory, battery, free space on C:, and the busiest app |
+| **Internet** | Connection badge (Wi-Fi band or Ethernet), download and upload speed with a 2-minute graph, connection name, data used today, and response time to your router rated good / ok / slow |
+| **Docker containers** | How many are running, total memory and processor use, then each container with its CPU and memory, a 🔥 mark on busy ones, and a stop button for each. **Stop all** and **Quit Docker** both ask first. Shows **Start Docker** when Docker is off |
+| **System health** | A plain-words summary ("Shut off suddenly twice in the last day · likely overheating"), how long the PC has been running, when it last started, and unexpected shutdowns from the last 30 days with the readings saved just before each one |
 
-At 85 °C or above, the thermal card turns red and pulses, and the tray icon turns red. At 75 °C it turns amber.
+At 85 °C or above, the GPU card turns red and pulses, and the tray icon turns red. At 75 °C it turns amber.
 
 ## Requirements
 
